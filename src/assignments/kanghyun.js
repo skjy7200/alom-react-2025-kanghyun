@@ -16,22 +16,19 @@ function Kanghyun() {
   };
 
   return (
-    <div className="todo-container">
+    <div>
       <h1>My To Dos ({todos.length})</h1>
-      <div className="todo-input-wrapper">
-        <input
-          type="text"
-          placeholder="할 일을 입력하세요"
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-        />
-        <button onClick={addTodo}>작성하기</button>
-      </div>
-      <ul className="todo-list">
+      <input
+        type="text"
+        value={input}
+        placeholder="할 일을 입력하세요"
+        onChange={(e) => setInput(e.target.value)}
+      />
+      <button onClick={addTodo}>추가</button>
+      <ul>
         {todos.map((todo, index) => (
-          <li key={index} className="todo-item">
-            <span>{todo}</span>
-            <button className="remove" onClick={() => removeTodo(index)}>❌</button>
+          <li key={index}>
+            {todo} <button onClick={() => removeTodo(index)}>❌</button>
           </li>
         ))}
       </ul>
