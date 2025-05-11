@@ -39,4 +39,4 @@ function Kanghyun() {
   );
 }
 
-export default Kanghyun; // ✅ 반드시 일치!
+export default Kanghyun;
