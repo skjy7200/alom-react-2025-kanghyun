@@ -6,7 +6,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<div>6주차 과제 - 김강현</div>} />
-        <Route path="/kanghyun" element={<kanghyun />} />  
+        <Route path="/kanghyun" element={<Kanghyun />} />  
       </Routes>
     </Router>
   );
