@@ -1,14 +1,13 @@
 import { useState } from "react";
 import "./kanghyun.css";
 
-function KanghyunTodo() {
+function Kanghyun() {
   const [todos, setTodos] = useState([]);
   const [input, setInput] = useState("");
 
   const addTodo = () => {
-    const trimmed = input.trim();
-    if (!trimmed) return;
-    setTodos([trimmed, ...todos]);
+    if (!input.trim()) return;
+    setTodos([input.trim(), ...todos]);
     setInput("");
   };
 
@@ -22,13 +21,12 @@ function KanghyunTodo() {
       <div className="todo-input-wrapper">
         <input
           type="text"
-          placeholder="Write your to do..."
+          placeholder="할 일을 입력하세요"
           value={input}
           onChange={(e) => setInput(e.target.value)}
         />
-        <button onClick={addTodo}>Add To Do</button>
+        <button onClick={addTodo}>작성하기</button>
       </div>
-      <hr />
       <ul className="todo-list">
         {todos.map((todo, index) => (
           <li key={index} className="todo-item">
@@ -41,4 +39,4 @@ function KanghyunTodo() {
   );
 }
 
-export default KanghyunTodo;
+export default Kanghyun; // ✅ 반드시 일치!
